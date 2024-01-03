@@ -76,7 +76,8 @@ searchButton.addEventListener("click", () => {
         cityHistoryList.length = cityHistoryList.length - 1;
         cityHistoryList.unshift(searchCity.value)
     }
-    cityHistory()
+    cityHistory();
+    writeLocalStorage(cityHistoryList)
 });
 
 //function adds buttons to the history list that can be clicked on to recall data from previous searches
@@ -99,9 +100,31 @@ function cityHistory() {
 }
 
 //undone - writing to local storage
-function writeLocalStorage(weatherHistory, cityHistoryList) {
+function writeLocalStorage(cityHistoryList) {
     //Function to write to LocalStorage
     //Validation if the passed variable is an object for storageObject
     if (typeof cityHistoryList !== 'object') { console.log("writeLocalStorage: Invalid type submitted."); return }
-    localStorage.setItem(weatherHistory, JSON.stringify(cityHistoryList))
+    localStorage.setItem("cityList", JSON.stringify(cityHistoryList))
 }
+
+//function reads local storage and remakes buttons
+function readLocalStorage(){
+    var remakeButtons = JSON.parse(localStorage.getItem("cityList"))
+    cityHistoryEl.innerHTML = "";
+    for (let i = 0; i < remakeButtons.length; i++) {
+        const list = document.createElement("button");
+        list.setAttribute("id", remakeButtons[i],);
+        cityHistoryEl.appendChild(list);
+        const container = document.getElementById(remakeButtons[i]);
+        container.setAttribute("value", remakeButtons[i]);
+        container.setAttribute("class", "btn");
+        container.textContent = remakeButtons[i];
+        container.addEventListener("click", function (event) {
+            const city = event.target.value;
+            getCurrentWeather(city);
+            getForecastWeather(city);
+        })
+    }
+}
+//calls readLocalStorage to fire when page loads
+readLocalStorage()
