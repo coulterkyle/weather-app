@@ -33,6 +33,11 @@ And you will see the 5-day forecast below
 
 ![Alt text](/Assets/screenshots/forecast.png)
 
+Searches will be saved on the left hand side underneath the search bar and can be clicked on to recall previous data
+
+![Alt text](/Assets/screenshots/history.png)
+
+
 
 ## License
 
