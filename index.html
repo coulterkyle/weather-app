@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="Assets/reset.css">
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <script
+  src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+  integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+  crossorigin="anonymous"
+></script>
   <link rel="stylesheet" href="Assets/style.css">
   <title>Weather App</title>
 </head>
@@ -23,26 +28,71 @@
     <div class="col-12 col-md-4">
 
       <div class="card">
-        <h2 class="card-header text-uppercase">Search for a city</h2>
-        <form id="user-form" class="card-body">
-          <label class="form-label" for="city-name">Search for a City:</label>
-          <input name="city-name" id="city-name" type="text" autofocus="true" class="form-input" />
-          <button type="submit" class="btn">Search</button>
-        </form>
+        <div class="search">
+          <h2 class="card-header">Search for a city:</h2></label>
+          <input type="text" placeholder="Enter a city name" spellcheck="false" id="city-input" class="form-input" />
+          <button class="btn">Search</button>
+        </div>
       </div>
 
       <hr>
 
       <div class="card">
         <div id="recently-viewed" class="card-body">
+          <div id="history">
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="col-12 col-md-8">
-      <h2 class="subtitle">Currently: <span id="current-weather"></span></h2>
-      <div id="repos-container" class="list-group"></div>
+    <div class="col-12 col-md-8" id="current-weather">
+      <div class="weather-hero">
+        <h2 class="search-term"></h2>
+        <img class="current-icon" src="" alt="">
+        <p class="current-temperature"></p>
+        <p class="current-wind"></p>
+        <p class="current-humidity"></p>
+      </div>
     </div>
+    <div class="five-day-forecast">
+        <div class="day" id="day1">
+          <p class="day1-date"></p>
+          <img class="day1-icon" src="" alt="">
+          <p class="day1-temperature"></p>
+          <p class="day1-wind"></p>
+          <p class="day1-humidity"></p>
+        </div>
+        <div class="day" id="day2">
+          <p class="day2-date"></p>
+          <img class="day2-icon" src="" alt="">
+          <p class="day2-temperature"></p>
+          <p class="day2-wind"></p>
+          <p class="day2-humidity"></p>
+        </div>
+        <div class="day" id="day3">
+          <p class="day3-date"></p>
+          <img class="day3-icon" src="" alt="">
+          <p class="day3-temperature"></p>
+          <p class="day3-wind"></p>
+          <p class="day3-humidity"></p>
+        </div>
+        <div class="day" id="day4">
+          <p class="day4-date"></p>
+          <img class="day4-icon" src="" alt="">
+          <p class="day4-temperature"></p>
+          <p class="day4-wind"></p>
+          <p class="day4-humidity"></p>
+        </div>
+        <div class="day" id="day5">
+          <p class="day5-date"></p>
+          <img class="day5-icon" src="" alt="">
+          <p class="day5-temperature"></p>
+          <p class="day5-wind"></p>
+          <p class="day5-humidity"></p>
+        </div>
+      </div>
+
+
   </main>
 
   <script src="Assets/script.js"></script>

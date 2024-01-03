@@ -1,7 +1,5 @@
 :root {
     --primary: #ffffff;
-    --secondary: #9caea9;
-    --light-dark: #6f6866;
     --blue: #320ee5;
   }
   
@@ -41,7 +39,6 @@
     width: 100%;
     display: block;
     margin: 5px 0;
-    border-radius: var(--border-radius);
     color: var(--primary);
     border: none;
     outline: none;
@@ -71,15 +68,19 @@
     color: white;
     display: inline-block;
   }
+
+  .search-term {
+    font-size: xx-large;
+  }
   
-  .list-group {
+ /* .list-group {
     padding: 0;
     list-style: none;
   }
   
   .list-item {
 
-  }
+  }*/
   
   /* CARDS */
   .card {
@@ -90,9 +91,11 @@
     color: black;
     text-align: center;
     font-size: xx-large;
+    float: left;
+    padding-bottom: 2px;
   }
   
-  .card-body {
+  .search {
     padding: 2.5%;
   }
   
@@ -114,6 +117,27 @@
     margin: 20px 0;
     font-size: 1.2rem;
     border-radius: 10px;
+  }
+
+  #current-weather {
+    border: 2px solid;
+    max-height: 250px;
+  }
+
+  .five-day-forecast {
+    display: inline-flex;
+    position: absolute;
+    margin-left: 32%;
+    margin-top: 300px;
+  }
+
+  .day {
+    border: 2px solid black;
+    height: 200px;
+    width: 175px;
+    margin-left: 32px;
+    background-color: #2c2160;
+    color: #ffffff;
   }
   
   /* HEIGHT / WIDTH UTILS */
