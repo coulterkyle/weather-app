@@ -22,6 +22,7 @@ async function getCurrentWeather(city) {
 
     //setting attributes and text based on data called in main hero section
     document.querySelector(".search-term").innerHTML = data.name;
+    document.querySelector(".current-date").innerHTML = dayjs(data.dt * 1000).format("MM-DD-YYYY");
     document.querySelector(".current-icon").setAttribute("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png")
     document.querySelector(".current-temperature").innerHTML = "Temperature: " + data.main.temp + "F";
     document.querySelector(".current-wind").innerHTML = "Wind: " + data.wind.speed + " MPH";
